@@ -1,0 +1,22 @@
+<!-- Button to add a new recipe -->
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success" (click)="onNewRecipe()">New Recipe</button>
+  </div>
+</div>
+
+<hr>
+
+<!-- List of recipe items -->
+<div class="row">
+  <div class="col-xs-12">
+    <!-- Loop through all recipes and render one recipe-item per recipe -->
+    <app-recipe-item
+      *ngFor="let recipeEl of recipes; let i = index"
+      [recipe]="recipeEl"  
+        
+      [index]="i">            <!-- Pass index for routing -->
+    </app-recipe-item>
+  </div>
+</div>
+

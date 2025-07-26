@@ -1,0 +1,27 @@
+<!-- Container row for the shopping list and edit form -->
+<div class="row">
+  <div class="col-xs-10">
+
+    <!-- Component to add/edit ingredients -->
+    <app-shopping-edit></app-shopping-edit>
+
+    <hr>
+
+    <!-- Display the list of ingredients -->
+    <ul class="list-group">
+
+      <!-- Loop through each ingredient -->
+      <a
+        class="list-group-item"
+        style="cursor: pointer"
+        *ngFor="let ingredient of ingredients; let i = index"
+        (click)="onEditItem(i)" > <!-- Calls method to edit this item -->
+      
+        {{ ingredient.name }} ({{ ingredient.amount }})
+      </a>
+
+    </ul>
+    
+  </div>
+</div>
+

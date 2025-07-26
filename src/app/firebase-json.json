@@ -1,0 +1,22 @@
+{
+  "inspiringRecipes": [
+    {
+      "title": "Avocado Toast",
+      "description": "A quick and healthy breakfast option.",
+      "image": "https://www.eatthis.com/wp-content/uploads/sites/4/2023/07/avocado-toast.jpg",
+      "video": "https://www.youtube.com/watch?v=_Zma2gqYBaM"
+    },
+    {
+      "title": "Mango Smoothie Bowl",
+      "description": "A vibrant and refreshing tropical smoothie.",
+      "image": "https://www.wellplated.com/wp-content/uploads/2019/08/Mango-Smoothie-Bowl-recipe.jpg",
+      "video": "https://www.youtube.com/watch?v=dDnR_1OPwm0"
+    },
+    {
+      "title": "Chicken Stir Fry",
+      "description": "A flavorful and colorful quick dinner.",
+      "image": "https://www.dinneratthezoo.com/wp-content/uploads/2018/05/chicken-stir-fry-5.jpg",
+      "video": "https://www.youtube.com/watch?v=PVqLxkK1zU0"
+    }
+  ]
+}

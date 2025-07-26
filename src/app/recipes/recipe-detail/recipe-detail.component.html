@@ -1,0 +1,72 @@
+<!-- 🖼️ Image Section -->
+<div class="row">
+  <div class="col-xs-12">
+    <!-- Displays the recipe image -->
+    <img
+      [src]="recipe.imagePath"  
+      alt="{{ recipe.name }}"  
+      class="img-responsive"  
+      style="max-height: 300px;"> <!-- Limit image height -->
+  </div>
+</div>
+
+<!-- 🏷️ Recipe Title -->
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{ recipe.name }}</h1>  <!-- Interpolation shows recipe name -->
+  </div>
+</div>
+
+<!-- ⚙️ Dropdown Menu for Actions -->
+<div class="row">
+  <div class="col-xs-12">
+    <div class="btn-group" appDropdown> <!-- Custom dropdown directive -->
+      <button type="button" class="btn btn-primary dropdown-toggle">
+        Manage Recipe <span class="create"></span> <!-- Label for button -->
+      </button>
+
+      <!-- 🔽 Dropdown menu with recipe actions -->
+      <ul class="dropdown-menu">
+        <!-- 👩‍🍳 Add ingredients to shopping list -->
+        <li>
+          <a (click)="onAddToShoppingList()" style="cursor: pointer;">
+            To Shopping List
+          </a>
+        </li>
+
+        <!-- ✏️ Edit recipe -->
+        <li>
+          <a (click)="onEditRecipe()" style="cursor: pointer;">
+            Edit Recipe
+          </a>
+        </li>
+
+        <!-- 🗑️ Delete recipe -->
+        <li>
+          <a (click)="onDeleteRecipe()" style="cursor: pointer;">
+            Delete Recipe
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- 📄 Recipe Description -->
+<div class="row">
+  <div class="col-xs-12">
+    {{ recipe.description }} <!-- Text description of recipe -->
+  </div>
+</div>
+
+<!-- 🧂 Ingredients List -->
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="list-group">
+      <!-- Repeat for each ingredient in the array -->
+      <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">
+        {{ ingredient.name }} - {{ ingredient.amount }} <!-- Show name and amount -->
+      </li>
+    </ul>
+  </div>
+</div>
