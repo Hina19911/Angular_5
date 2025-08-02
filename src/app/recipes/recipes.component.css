@@ -1,0 +1,14 @@
+.card-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card-body img {
+  margin-bottom: 1rem;
+}
+
+.card-body p {
+  font-size: 2rem;
+  color: #555;
+}
+/* Global full-page background image */

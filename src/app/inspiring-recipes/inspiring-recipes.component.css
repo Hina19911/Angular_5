@@ -1,0 +1,10 @@
+.card img {
+  height: 100%;
+  object-fit: cover; /* crops the image to fit */
+  width: 100%;       /* ensures full width of column */
+  max-height: 200px; /*  limit height */
+  padding: auto;
+}
+.card {
+  height: 220px;
+}

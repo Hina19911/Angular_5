@@ -1,8 +1,36 @@
 <div class="row">
+  <!-- Left Column: Recipe List -->
   <div class="col-md-5">
     <app-recipe-list></app-recipe-list>
   </div>
+
+  <!-- Right Column: Router Outlet -->
   <div class="col-md-7">
     <router-outlet></router-outlet>
   </div>
+</div>
+
+<!-- Recipe of the Day Section -->
+<!-- Show this card only if recipeOfTheDay is loaded -->
+<div class="card my-5 shadow-lg text-center" *ngIf="recipeOfTheDay">
+  
+  <!-- Title centered with large heading -->
+  <div class="card-header bg-primary text-white">
+    <h2 class="mb-0">🍽 Recipe of the Day: {{ recipeOfTheDay.strMeal }}</h2>
+  </div>
+
+  <!-- Recipe image centered and responsive -->
+  <div class="card-body">
+    <img 
+      [src]="recipeOfTheDay.strMealThumb" 
+      alt="Recipe Image"
+      class="img-fluid rounded mx-auto d-block"
+      style="max-width: 300px;">
+
+    <!-- Description preview -->
+    <p class="p-3 text-muted">
+      {{ recipeOfTheDay.strInstructions | slice:0:500 }}...
+    </p>
+  </div>
+
 </div>

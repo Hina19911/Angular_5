@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Global full-page background image */
+body {
+   background-image: url('https://img.freepik.com/premium-photo/top-view-tomatoes-lettuce-leaves-with-copy-space_199223-1495.jpg?semt=ais_hybrid&w=740&q=80');
+  background-size: cover;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+ 
+
+

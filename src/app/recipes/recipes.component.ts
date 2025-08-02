@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { RecipeOfTheDayService } from '../services/recipe-of-the-day.service';
+import {
+  FormBuilder,
+  FormGroup,
+  FormArray,
+  FormControl
+} from '@angular/forms';
 
 @Component({
   selector: 'app-recipes',
@@ -6,10 +13,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recipes.component.css']
 })
 export class RecipesComponent implements OnInit {
+  recipeOfTheDay: any;
 
-  constructor() { }
+  constructor(private recipeService: RecipeOfTheDayService) { }
 
   ngOnInit() {
+    this.recipeService.getRecipe().subscribe(data => {
+      this.recipeOfTheDay = data.meals[0];
+    });
   }
-
+ 
 }

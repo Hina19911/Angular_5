@@ -13,9 +13,12 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
 
   // List of ingredients to display
   ingredients: Ingredient[];
+   // 🛒 Array for items added to cart
+  cartItems: Ingredient[] = [];
 
   // Subscription to keep track of updates from the service
   private subscription: Subscription;
+ingredient: Ingredient;
 
   constructor(private slService: ShoppingListService) { }
 
@@ -31,10 +34,18 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
         }
       );
   }
-
+//adding Cartflow logic
+onAddToCart(ingredient: Ingredient) {
+  this.cartItems.push({ ...ingredient }); // add a copy, not reference
+  console.log("Cart now has:", this.cartItems);
+}
   // Called when a user clicks an ingredient to edit it
   onEditItem(index: number) {
     this.slService.startedEditing.next(index); // Notify the edit form which item to load
+  }
+   // Simulate checkout
+   onCheckout() {
+    alert("✅ Checkout initiated! (Stripe integration coming soon)");
   }
 
   // Cleanup subscription to avoid memory leaks
